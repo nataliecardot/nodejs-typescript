@@ -24,8 +24,8 @@ router.post('/todo', (req, res, next) => {
 
 // Replace todo
 router.put('/todo/:todoId', (req, res, next) => {
-  const tid = req.params.todoId;
-  const todoIndex = todos.findIndex((todoItem) => todoItem.id === tid);
+  const todoId = req.params.todoId;
+  const todoIndex = todos.findIndex((todoItem) => todoItem.id === todoId);
   if (todoIndex >= 0) {
     todos[todoIndex] = { id: todos[todoIndex].id, text: req.body.text };
     return res.status(200).json({ message: 'Todo updated.', todos });
