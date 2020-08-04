@@ -19,7 +19,7 @@ router.post('/todo', (req, res, next) => {
   todos.push(newTodo);
 
   // 201: created success
-  return res.status(201).json({ message: 'Todo added.', todo: newTodo, todos });
+  res.status(201).json({ message: 'Todo added.', todo: newTodo, todos });
 });
 
 // Replace todo
